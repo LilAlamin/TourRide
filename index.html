@@ -31,31 +31,128 @@
             /* Safari dan Chrome */
         }
 
-        .navbar-nav .dropdown:hover .dropdown-menu {
+        .navbar .dropdown:hover .dropdown-menu {
             display: block;
         }
 
         .navbar-transition {
             transition: background-color 0.5s ease-in-out;
         }
-        .navbar-transparent {
-            background-color: rgba(173, 173, 173, 0); /* rgba(173, 173, 173, 0) memberi warna abu-abu dengan opacity 0 */
+
+        .navbar {
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .navbar-brand img {
+            margin-left: -40px;
+        }
+
+        .menu-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-list li {
+            display: inline-block;
+            margin-right: 40px;
+        }
+
+        .menu-list li:last-child {
+            margin-right: 0;
+        }
+
+        .menu-list li a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Popins', sans-serif;
+            font-weight: 550;
+            font-size: 16px;
+        }
+
+        .cover-section {
+            background-image: url('img/image.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Style for dropdown menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            background-color: #352d2d;
+            /* background color of the dropdown menu */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            /* shadow effect */
+        }
+
+        /* Show dropdown menu when hovering over parent item */
+        .has-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Style for dropdown menu items */
+        .dropdown-menu li {
+            padding: 10px 10px;
+        }
+
+        .dropdown-menu li:hover {
+            background-color: #383434;
+            /* background color of the dropdown item when hovered */
+        }
+
+        /* Remove bullets from submenu items */
+        .dropdown-menu {
+            list-style-type: none;
         }
     </style>
     <script>
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('myNavbar');
-            if (window.scrollY > 50) {
-                navbar.classList.remove('navbar-transparent');
-                navbar.classList.add('navbar-transition', 'bg-body-tertiary');
+        // window.addEventListener('scroll', function() {
+        //     var navbar = document.getElementById('myNavbar');
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.remove('navbar-transparent');
+        //         navbar.classList.add('navbar-transition', 'bg-body-tertiary');
+        //     } else {
+        //         navbar.classList.add('navbar-transparent');
+        //         navbar.classList.remove('bg-body-tertiary', 'navbar-transition');
+        //     }
+        // });
+        window.addEventListener("scroll", function() {
+            var navbar = document.getElementById("navbar");
+            var coverSection = document.getElementById("cover");
+            var coverSectionHeight = coverSection.offsetHeight;
+            var halfCoverSectionHeight = coverSectionHeight / 20;
+
+            if (window.scrollY < halfCoverSectionHeight) {
+                navbar.style.backgroundColor = "transparent";
             } else {
-                navbar.classList.add('navbar-transparent');
-                navbar.classList.remove('bg-body-tertiary', 'navbar-transition');
+                navbar.style.backgroundColor =
+                "rgba(169, 169, 169, 1)"; // Ubah nilai RGBA menjadi abu-abu yang Anda inginkan
             }
         });
     </script>
-<nav class="navbar navbar-expand-lg sticky-top navbar-transparent bg-secondary" id="myNavbar">
-    <div class="container-fluid" style="margin-left: 15pc;">
+
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top navbar-transparent" id="myNavbar">
+        <div class="container-fluid" style="margin-left: 15pc;">
             <a class="navbar-brand" href="#">
                 <img src="img/logo.png" alt="Bootstrap" width="50" height="35">
             </a>
@@ -103,12 +200,55 @@
                 </ul>
             </div>
         </div>
+    </nav> -->
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <img src="img/logo.png" alt="Logo" width="50" height="35">
+                </div>
+                <div class="navbar-menu">
+                    <ul class="menu-list">
+                        <li class="nav-item dropdown"> <!-- Menambahkan kelas dropdown Bootstrap -->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> <!-- Menambahkan kelas dropdown-menu Bootstrap -->
+                                <li><a class="dropdown-item" href="#">Artikel</a></li>
+                                <li><a class="dropdown-item" href="#">Event Tour Ride</a></li>
+                                <li><a class="dropdown-item" href="#">Galeri</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Visi & Misi</a></li>
+                        <li><a href="#">Produk Kami</a></li>
+                        <li><a href="#">Kontak Kami</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </nav>
 
 
-
-    <section id="cover"
-        style="background-image: url('img/image.png'); background-size: cover; background-position: center; height: 100vh; background-color: rgba(0, 0, 0, 0.5);">
+    <section id="cover" class="cover-section">
+        <div class="container">
+            <div class="row">
+                <div class="text-white" style="margin-left: -50px; margin-top: 40vh;">
+                    <h1 style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;">Halo Selamat
+                        Datang Di TourRide</h1>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;">Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.Ut enim ad minim veniam, <br> quis nostrud exercitation ullamco laboris.</p>
+                    <a href="#" class="btn btn-secondary rounded-pill"
+                        style="font-family: 'Popins', sans-serif; font-weight: 500; font-size: 20px; padding: 10px 20px;">Jelajahi
+                        Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cover" class="cover-section">
         <div class="container">
             <div class="row">
                 <div class="text-white" style="margin-left: -50px; margin-top: 40vh;">
