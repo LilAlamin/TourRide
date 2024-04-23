@@ -10,6 +10,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -87,9 +88,6 @@
         }
 
         .cover-section {
-            background-image: url('img/image.png');
-            background-size: cover;
-            background-position: center;
             height: 100vh;
             background-color: rgba(255, 255, 255, 0.5);
         }
@@ -146,7 +144,7 @@
                 navbar.style.backgroundColor = "transparent";
             } else {
                 navbar.style.backgroundColor =
-                "rgba(169, 169, 169, 1)"; // Ubah nilai RGBA menjadi abu-abu yang Anda inginkan
+                    "rgba(169, 169, 169, 1)"; // Ubah nilai RGBA menjadi abu-abu yang Anda inginkan
             }
         });
     </script>
@@ -211,18 +209,19 @@
                 <div class="navbar-menu">
                     <ul class="menu-list">
                         <li class="nav-item dropdown"> <!-- Menambahkan kelas dropdown Bootstrap -->
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#cover" id="navbarDropdown">
                                 Home
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> <!-- Menambahkan kelas dropdown-menu Bootstrap -->
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!-- Menambahkan kelas dropdown-menu Bootstrap -->
                                 <li><a class="dropdown-item" href="#">Artikel</a></li>
                                 <li><a class="dropdown-item" href="#">Event Tour Ride</a></li>
                                 <li><a class="dropdown-item" href="#">Galeri</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Visi & Misi</a></li>
-                        <li><a href="#">Produk Kami</a></li>
+                        <li><a href="#Profile">Profile</a></li>
+                        <li><a href="#Visi">Visi & Misi</a></li>
+                        <li><a href="#Layanan">Produk Kami</a></li>
                         <li><a href="#">Kontak Kami</a></li>
                         <li><a href="#">About Us</a></li>
                     </ul>
@@ -232,15 +231,21 @@
     </nav>
 
 
-    <section id="cover" class="cover-section">
+    <section id="cover" class="cover-section"
+        style="background-image: url('img/image.png');
+    background-size: cover;
+    background-position: center;">
         <div class="container">
             <div class="row">
                 <div class="text-white" style="margin-left: -50px; margin-top: 40vh;">
                     <h1 style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;">Halo Selamat
                         Datang Di TourRide</h1>
-                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;">Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.Ut enim ad minim veniam, <br> quis nostrud exercitation ullamco laboris.</p>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;">
+                        TourRide adalah sebuah layanan tur yang menghadirkan petualangan seru bagi para penggemar
+                        motor.<br>
+                        Dengan menggabungkan keahlian dalam merencanakan perjalanan, pemanduan yang aman, dan tujuan
+                        wisata yang menarik, TourRide menawarkan pengalaman touring yang tak terlupakan di berbagai
+                        destinasi menarik.</p>
                     <a href="#" class="btn btn-secondary rounded-pill"
                         style="font-family: 'Popins', sans-serif; font-weight: 500; font-size: 20px; padding: 10px 20px;">Jelajahi
                         Sekarang</a>
@@ -248,22 +253,165 @@
             </div>
         </div>
     </section>
-    <section id="cover" class="cover-section">
+    >
+
+
+    <!-- Profile -->
+    <section id="Profile" class="cover-section" style="padding-bottom: 120vh;">
         <div class="container">
             <div class="row">
-                <div class="text-white" style="margin-left: -50px; margin-top: 40vh;">
-                    <h1 style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;">Halo Selamat
-                        Datang Di TourRide</h1>
-                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;">Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua.Ut enim ad minim veniam, <br> quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="btn btn-secondary rounded-pill"
-                        style="font-family: 'Popins', sans-serif; font-weight: 500; font-size: 20px; padding: 10px 20px;">Jelajahi
-                        Sekarang</a>
+                <div class="col-md-6 text-white" style="margin-top: 20vh; ">
+                    <h1
+                        style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;color: #000000;margin-bottom: 50px;">
+                        Profile Kami</h1>
+                    <h3 style="color: #000000;">Pengalaman</h3>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;color: #000000;">
+                        Bergabung dengan TourRide adalah menyelami pengalaman touring yang tak tertandingi. Kami
+                        menghadirkan petualangan motor yang menggugah adrenalin, memungkinkan Anda menjelajahi
+                        jalan-jalan pemandangan yang menakjubkan sambil menikmati kebebasan di atas kendaraan Anda.
+                        Dalam setiap perjalanan, Anda akan merasakan kegembiraan menyusuri rute-rute indah, merasakan
+                        angin melambai di wajah, dan merasakan kebersamaan di antara komunitas motor yang solid. Dengan
+                        TourRide, setiap putaran roda menjadi bagian dari kisah petualangan yang tak terlupakan.</p>
+                    <h3 class="text-dark">Kelebihan</h3>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;color: #000000;">
+                        Keunggulan TourRide adalah menyediakan pengalaman touring yang lengkap dan tanpa khawatir. Kami
+                        menempatkan keselamatan sebagai prioritas utama, dengan menghadirkan perjalanan yang
+                        terorganisir dengan baik dan dipandu oleh tim yang terlatih. Selain itu, kami menawarkan beragam
+                        rute dan destinasi wisata menarik, memberikan fleksibilitas bagi peserta untuk memilih
+                        pengalaman yang sesuai dengan preferensi mereka. Dengan pelayanan yang ramah, profesional, dan
+                        responsif, kami berkomitmen untuk memastikan setiap pelanggan merasa puas dan terjamin selama
+                        perjalanan mereka bersama TourRide.</p>
+                </div>
+                <div class="col-md-6" style="overflow-y: hidden;">
+                    <img src="img/profile.png" alt="Gambar Persegi"
+                        style="width: 100%; height: auto; margin-top: 25vh; margin-left: 20vh;">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Visi Misi -->
+    <section id="Visi" class="cover-section"
+        style="background-image: url('img/visi.png'); background-size: cover; background-position: center;">
+        <div class="container">
+
+            <div class="row">
+                <!-- Kolom untuk Visi -->
+                <div class="col-md-6" style="margin-top:35vh;">
+                    <h1
+                        style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;color: #ffffff;margin-bottom: 55px;margin-top: -100px; margin-left: 0;">
+                        Visi</h1>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;color: #ffffff;">
+                        "Menjadi pelopor dan pemimpin dalam menyediakan pengalaman touring yang tak tertandingi bagi
+                        para penggemar motor, dengan fokus pada keselamatan, kebersamaan, dan pelayanan yang unggul.
+                        Kami bertekad untuk menghadirkan petualangan yang memikat, menghubungkan komunitas motor, dan
+                        menginspirasi semangat petualangan di dalam diri setiap pengendara."</p>
+                </div>
+                <!-- Kolom untuk Misi -->
+                <div class="col-md-6" style="margin-top: 35vh;">
+                    <h1
+                        style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;color: #ffffff;margin-bottom: 55px;margin-top: -100px; margin-left: auto;">
+                        Misi</h1>
+                    <ul style="font-family: 'Popins',sans-serif; font-weight: 400; font-size: 16px;color: #fff;">
+                        <li>Menghadirkan pengalaman touring yang aman dan menyenangkan bagi setiap peserta, dengan
+                            memprioritaskan keselamatan sebagai yang utama.</li>
+                        <li>Menyelenggarakan perjalanan tour yang beragam dan menarik, mengunjungi destinasi menarik dan
+                            jalur pemandangan yang memukau.</li>
+                        <li>Membangun dan memperkuat komunitas motor melalui kegiatan touring yang menginspirasi dan
+                            membangun persahabatan baru.</li>
+                        <li>Memberikan pelayanan yang ramah, profesional, dan responsif, memastikan kepuasan dan
+                            kepercayaan pelanggan.</li>
+                        <li>Berkomitmen untuk melestarikan lingkungan dan budaya setempat, serta mendukung pembangunan
+                            ekonomi lokal di destinasi wisata yang dikunjungi.</li>
+                        <li>Terus melakukan inovasi dan peningkatan dalam layanan, untuk memenuhi dan melebihi harapan
+                            pelanggan serta menjaga posisi sebagai pemimpin dalam industri touring motor.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan & Produk -->
+    <section id="Layanan" class="cover-section">
+        <div class="container justify-content-center">
+            <div class=" text-center text-dark">
+                <h1
+                    style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px; color: #000000; margin-bottom: 50px; margin-top: 20vh;">
+                    Produk Dan Layanan Kami</h1>
+            </div>
+        </div>
+
+        <div class="container justify-content-center">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Helm Bogo Tour Ride</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 1.</p>
+                            <p class="card-text">Harga: Rp.500.000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Produk 2</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 2.</p>
+                            <p class="card-text">Harga: $XX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Produk 3</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 3.</p>
+                            <p class="card-text">Harga: $XX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container justify-content-center" style="margin-top: 20px; padding-bottom: 10vh;">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Produk 1</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 1.</p>
+                            <p class="card-text">Harga: $XX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Produk 2</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 2.</p>
+                            <p class="card-text">Harga: $XX</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Nama Produk 3</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 3.</p>
+                            <p class="card-text">Harga: $XX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
