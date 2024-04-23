@@ -10,6 +10,11 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-0VF8hMak2LDOD8OmvZVsCmXnb1Cc0r2tG5NT8ThRNE92p5y1eKKnLPqch/jiiQH7a/wGxTzvrU3QhEUfFzpkKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -122,6 +127,12 @@
         .dropdown-menu {
             list-style-type: none;
         }
+
+        .social-media-icons a {
+            margin-right: 10px;
+            /* Menambahkan margin kanan antara ikon-ikon */
+            font-size: 20px;
+        }
     </style>
     <script>
         // window.addEventListener('scroll', function() {
@@ -144,7 +155,7 @@
                 navbar.style.backgroundColor = "transparent";
             } else {
                 navbar.style.backgroundColor =
-                    "rgba(169, 169, 169, 1)"; // Ubah nilai RGBA menjadi abu-abu yang Anda inginkan
+                    "rgb(25, 25, 25)"; // Ubah nilai RGBA menjadi abu-abu yang Anda inginkan
             }
         });
     </script>
@@ -214,16 +225,15 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <!-- Menambahkan kelas dropdown-menu Bootstrap -->
-                                <li><a class="dropdown-item" href="#">Artikel</a></li>
-                                <li><a class="dropdown-item" href="#">Event Tour Ride</a></li>
-                                <li><a class="dropdown-item" href="#">Galeri</a></li>
+                                <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
+                                <li><a class="dropdown-item" href="event.html">Event Tour Ride</a></li>
                             </ul>
                         </li>
                         <li><a href="#Profile">Profile</a></li>
                         <li><a href="#Visi">Visi & Misi</a></li>
                         <li><a href="#Layanan">Produk Kami</a></li>
-                        <li><a href="#">Kontak Kami</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#Kontak">Kontak Kami</a></li>
+                        <li><a href="#About">About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -341,84 +351,165 @@
             </div>
         </div>
 
-        <div class="container justify-content-center">
+        <div class="container justify-content-center" style="font-family: 'Popins', sans-serif; font-weight: 500;">
             <div class="row justify-content-center">
                 <div class="col-md-4">
                     <div class="card">
                         <img src="img/produk1.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Helm Bogo Tour Ride</h5>
+                            <h5 class="card-title">N Helmet TourRide</h5>
                             <p class="card-text">Deskripsi singkat tentang produk 1.</p>
                             <p class="card-text">Harga: Rp.500.000</p>
+                            <button class="btn btn-primary btn-md">Beli Sekarang</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <img src="img/jacket.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Nama Produk 2</h5>
+                            <h5 class="card-title">Jacket TourRide</h5>
                             <p class="card-text">Deskripsi singkat tentang produk 2.</p>
-                            <p class="card-text">Harga: $XX</p>
+                            <p class="card-text">Harga: Rp.600.000</p>
+                            <button class="btn btn-primary btn-md">Beli Sekarang</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="img/produk1.png" class="card-img-top" alt="...">
+                        <img src="img/celana.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Nama Produk 3</h5>
+                            <h5 class="card-title">N Jeans X Travis Scoot</h5>
+                            <p class="card-text">N Jeans yang berkolaborasi dengan Travis Scoot</p>
+                            <p class="card-text">Harga: Rp.350.000</p>
+                            <button class="btn btn-primary btn-md">Beli Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/bali.jpg" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Tour Goes To Bali</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 1.</p>
+                            <p class="card-text">Harga: Rp.xxx.xxx</p>
+                            <button class="btn btn-primary btn-md">Reservasi Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/labuan.jpg" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Labuan Bajo Touring</h5>
+                            <p class="card-text">Deskripsi singkat tentang produk 2.</p>
+                            <p class="card-text">Harga: Rp.xxx.xxx</p>
+                            <button class="btn btn-primary btn-md">Reservasi Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/ntt.jpg" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">NTT Touring</h5>
                             <p class="card-text">Deskripsi singkat tentang produk 3.</p>
-                            <p class="card-text">Harga: $XX</p>
+                            <p class="card-text">Harga: Rp.xxx.xxx</p>
+                            <button class="btn btn-primary btn-md">Reservasi Sekarang</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container justify-content-center" style="margin-top: 20px; padding-bottom: 10vh;">
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/produk1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Nama Produk 1</h5>
-                            <p class="card-text">Deskripsi singkat tentang produk 1.</p>
-                            <p class="card-text">Harga: $XX</p>
-                        </div>
+
+    </section>
+
+
+    <!-- Kontak -->
+    <section id="Kontak" class="cover-section" style="margin-top: 58vh;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="overflow-y: hidden;">
+                    <img src="img/profile.png" alt="Gambar Persegi"
+                        style="width: 100%; height: auto; margin-top: 25vh; margin-right: 30vh;">
+                </div>
+                <div class="col-md-6 order-md-6 text-white" style="margin-top: 25vh;">
+                    <h1
+                        style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px;color: #000000;margin-bottom: 50px;">
+                        Kontak Kami</h1>
+                    <h4 style="color: #000000;">Alamat</h4>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;color: #000000;">
+                        JL.Nogogana RT 4 RW 1, Kel.Gajahan, Kota Surakarta</p>
+                    <h4 class="text-dark">Nomor Telepon</h4>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;color: #000000;">
+                        +6217297927012</p>
+                    <h4 class="text-dark">Email</h4>
+                    <p style="font-family: 'Popins', sans-serif; font-weight: 400; font-size: 16px;color: #000000;">
+                        TourRide117@gmail.com</p>
+                    <h4 class="text-dark">Social Media</h4>
+                    <div class="social-media-icons">
+                        <a href="#d" style="text-decoration: none; color: #000;"><i
+                                class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#d" style="text-decoration: none; color: #000;"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="#d" style="text-decoration: none; color: #000000;"><i
+                                class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#d" style="text-decoration: none; color: #000000;"><i
+                                class="fab fa-tiktok fa-lg"></i></a>
+                        <a href="#d" style="text-decoration: none; color: #000000;"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <!-- Tambahkan ikon-ikon sosial media lainnya sesuai kebutuhan -->
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/produk1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Nama Produk 2</h5>
-                            <p class="card-text">Deskripsi singkat tentang produk 2.</p>
-                            <p class="card-text">Harga: $XX</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/produk1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Nama Produk 3</h5>
-                            <p class="card-text">Deskripsi singkat tentang produk 3.</p>
-                            <p class="card-text">Harga: $XX</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 
 
+    <!-- about us -->
+    <section id="About" class="cover-section" style="background-color: #000; padding-bottom: 20px;">
+        <div class="container justify-content-center">
+            <div class=" text-center text-dark">
+                <h1
+                    style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px; color: #ffffff; margin-bottom: 50px; margin-top: 20vh;">
+                    About Us</h1>
+            </div>
+        </div>
+
+        <div class="container justify-content-center"
+            style="font-family: 'Popins', sans-serif; font-weight: 500; text-align: justify;">
+            <h3 style="width: 75%; margin: 0 auto; color: #fff; text-align: center; font-stretch: expanded; font-size: 25px;">TourRide adalah penyedia tur motor yang bersemangat, menawarkan
+                pengalaman touring yang tak terlupakan di berbagai destinasi menarik. Kami didedikasikan untuk
+                keselamatan, kebersamaan, dan kepuasan pelanggan, serta berkomitmen untuk menciptakan kenangan abadi
+                bagi setiap peserta kami. Bersama TourRide, mari jelajahi dunia dengan roda-rumah kami dan nikmati
+                kebebasan di atas motor.</h3>
+        </div>
+
+
+    </section>
+
+    <footer style="background-color: #ffffff; padding: 20px; text-align: center;">
+        <p style="margin: 0; font-family: 'Popins', sans-serif; font-size: 14px; color: #000000;">Copyright <span id="currentYear"></span> @TourRide</p>
+    </footer>
+    
+    <script>
+        // Mengambil tahun saat ini
+        var currentYear = new Date().getFullYear();
+        // Menampilkan tahun saat ini pada footer
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
+    
 
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
-
+    <script src="https://kit.fontawesome.com/4ec5967234.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
