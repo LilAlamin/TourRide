@@ -585,28 +585,56 @@
 
 
     <!-- about us -->
-    <section id="About" class="cover-section" style="background-color: #000; padding-bottom: 20px;">
+    <section id="About" class="cover-section" style="position: relative; padding-bottom: 20px; overflow: hidden; height: 100vh;">
+        <div class="video-background">
+            <iframe src="https://www.youtube.com/embed/1phi9JrtGmo?autoplay=1&mute=1&loop=1&controls=0&playlist=1phi9JrtGmo&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="overlay"></div>
+    
         <div class="container justify-content-center">
-            <div class=" text-center text-dark">
-                <h1
-                    style="font-family: 'Popins', sans-serif; font-weight: 700; font-size: 58px; color: #ffffff; margin-bottom: 50px; margin-top: 20vh;">
-                    About Us</h1>
+            <div class="text-center text-dark">
+                <h1 style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 58px; color: #ffffff; margin-bottom: 50px; margin-top: 20vh;">
+                    About Us
+                </h1>
             </div>
         </div>
-
-        <div class="container justify-content-center"
-            style="font-family: 'Popins', sans-serif; font-weight: 500; text-align: justify;">
-            <h3
-                style="width: 75%; margin: 0 auto; color: #fff; text-align: center; font-stretch: expanded; font-size: 25px;">
-                TourRide adalah penyedia tur motor yang bersemangat, menawarkan
-                pengalaman touring yang tak terlupakan di berbagai destinasi menarik. Kami didedikasikan untuk
-                keselamatan, kebersamaan, dan kepuasan pelanggan, serta berkomitmen untuk menciptakan kenangan abadi
-                bagi setiap peserta kami. Bersama TourRide, mari jelajahi dunia dengan roda-rumah kami dan nikmati
-                kebebasan di atas motor.</h3>
+    
+        <div class="container justify-content-center" style="font-family: 'Poppins', sans-serif; font-weight: 500; text-align: justify;">
+            <h3 style="width: 75%; margin: 0 auto; color: #fff; text-align: center; font-stretch: expanded; font-size: 25px;">
+                TourRide adalah penyedia tur motor yang bersemangat, menawarkan pengalaman touring yang tak terlupakan di berbagai destinasi menarik. Kami didedikasikan untuk keselamatan, kebersamaan, dan kepuasan pelanggan, serta berkomitmen untuk menciptakan kenangan abadi bagi setiap peserta kami. Bersama TourRide, mari jelajahi dunia dengan roda-rumah kami dan nikmati kebebasan di atas motor.
+            </h3>
         </div>
-
-
     </section>
+    
+    <style>
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+    
+        .video-background iframe {
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            object-fit: cover;
+        }
+    
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0); /* Adjust the opacity as needed */
+            z-index: 0;
+        }
+    </style>
+    
 
 
     <footer style="background-color: #ffffff; padding: 20px; text-align: center;">
