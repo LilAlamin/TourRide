@@ -133,6 +133,57 @@
             /* Menambahkan margin kanan antara ikon-ikon */
             font-size: 20px;
         }
+
+        #client-title {
+        font-family: 'Popins', sans-serif;
+        font-weight: 700;
+        font-size: 58px;
+        color: #ffffff;
+        margin-bottom: 50px;
+        margin-top: 20vh;
+    }
+
+    /* Gaya untuk jumlah klien */
+    #clientCount {
+        font-family: 'Popins', sans-serif;
+        font-weight: 700;
+        font-size: 58px;
+        color: #ffffff;
+        margin-bottom: 50px;
+        margin-top: 2vh;
+    }
+
+    /* Gaya untuk seluruh bagian klien */
+    #Client {
+        background-color: #000;
+        padding-bottom: 10px;
+        margin-top: 50vh;
+    }
+
+    /* Gaya untuk logo di dalam marquee */
+    .marquee {
+        width: max-content; /* Lebar elemen marquee sebesar total lebar gambar */
+        animation: marquee 10s linear infinite; /* Animasi untuk marquee */
+        white-space: nowrap; /* Agar gambar tetap dalam satu baris */
+        overflow: hidden; /* Agar gambar di luar area tersembunyi */
+    }
+
+    .marquee img {
+        width: 100px; /* Lebar gambar */
+        height: auto; /* Tinggi gambar disesuaikan agar tetap proporsional */
+        margin-right: 20px; /* Ruang di antara gambar */
+        vertical-align: middle;
+    }
+
+    /* Keyframes untuk animasi marquee */
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%); /* Mulai dari kanan */
+        }
+        100% {
+            transform: translateX(-200%); /* Selesai di kiri */
+        }
+    }
     </style>
     <script>
         // window.addEventListener('scroll', function() {
@@ -157,6 +208,50 @@
                 navbar.style.backgroundColor =
                     "rgb(25, 25, 25)"; // Ubah nilai RGBA menjadi abu-abu yang Anda inginkan
             }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let animationStarted = false;
+
+            // Fungsi untuk menganimasikan peningkatan jumlah klien
+            function animateClients(target, duration) {
+                let start = 0;
+                const increment = Math.ceil(target / (duration / 16)); // 16ms untuk frame rate sekitar 60 fps
+                const clientCountElement = document.getElementById('clientCount');
+
+                function updateCount() {
+                    start += increment;
+                    if (start >= target) {
+                        start = target;
+                        clientCountElement.textContent = start + "++";
+                    } else {
+                        clientCountElement.textContent = start;
+                    }
+                    if (start < target) {
+                        requestAnimationFrame(updateCount);
+                    }
+                }
+
+                updateCount();
+            }
+
+            function checkScroll() {
+                const clientElement = document.getElementById('Client');
+                const clientPosition = clientElement.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (clientPosition < windowHeight && !animationStarted) {
+                    // Panggil fungsi untuk memulai animasi dengan target 100++ dan durasi 2000ms (2 detik)
+                    animateClients(100, 2000);
+                    animationStarted = true;
+                }
+            }
+
+            // Panggil fungsi checkScroll saat halaman di-scroll
+            window.addEventListener('scroll', checkScroll);
+            // Panggil fungsi checkScroll saat halaman dimuat
+            checkScroll();
         });
     </script>
 
@@ -388,8 +483,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="img/bali.jpg" class="card-img-top"
-                            alt="...">
+                        <img src="img/bali.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Tour Goes To Bali</h5>
                             <p class="card-text">Deskripsi singkat tentang produk 1.</p>
@@ -400,8 +494,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="img/labuan.jpg" class="card-img-top"
-                            alt="...">
+                        <img src="img/labuan.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Labuan Bajo Touring</h5>
                             <p class="card-text">Deskripsi singkat tentang produk 2.</p>
@@ -412,8 +505,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="img/ntt.jpg" class="card-img-top"
-                            alt="...">
+                        <img src="img/ntt.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">NTT Touring</h5>
                             <p class="card-text">Deskripsi singkat tentang produk 3.</p>
@@ -427,9 +519,31 @@
 
     </section>
 
+    <!-- Client -->
+
+    <section id="Client" style="padding-bottom: 15vh;">
+        <div class="container justify-content-center">
+            <div class="text-center text-dark">
+                <h1 id="client-title">Client Kami</h1>
+                <p id="clientCount">0</p>
+            </div>
+        </div>
+    
+        <!-- <div class="container" style="padding-bottom: 10vh;">
+            <div class="marquee" style="overflow: hidden;">
+                <img src="yamaha.png" alt="Logo 1">
+                <img src="ducati.png" alt="Logo 1">
+                <img src="https://via.placeholder.com/400x350" alt="Logo 1">
+                <img src="https://via.placeholder.com/400x350" alt="Logo 1">
+
+                Tambahkan lebih banyak gambar logo sesuai kebutuhan -->
+            </div>
+        </div> 
+    </section>
+
 
     <!-- Kontak -->
-    <section id="Kontak" class="cover-section" style="margin-top: 58vh;">
+    <section id="Kontak" class="cover-section" style="margin-top: 28vh;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6" style="overflow-y: hidden;">
@@ -482,7 +596,9 @@
 
         <div class="container justify-content-center"
             style="font-family: 'Popins', sans-serif; font-weight: 500; text-align: justify;">
-            <h3 style="width: 75%; margin: 0 auto; color: #fff; text-align: center; font-stretch: expanded; font-size: 25px;">TourRide adalah penyedia tur motor yang bersemangat, menawarkan
+            <h3
+                style="width: 75%; margin: 0 auto; color: #fff; text-align: center; font-stretch: expanded; font-size: 25px;">
+                TourRide adalah penyedia tur motor yang bersemangat, menawarkan
                 pengalaman touring yang tak terlupakan di berbagai destinasi menarik. Kami didedikasikan untuk
                 keselamatan, kebersamaan, dan kepuasan pelanggan, serta berkomitmen untuk menciptakan kenangan abadi
                 bagi setiap peserta kami. Bersama TourRide, mari jelajahi dunia dengan roda-rumah kami dan nikmati
@@ -492,17 +608,19 @@
 
     </section>
 
+
     <footer style="background-color: #ffffff; padding: 20px; text-align: center;">
-        <p style="margin: 0; font-family: 'Popins', sans-serif; font-size: 14px; color: #000000;">Copyright <span id="currentYear"></span> @TourRide</p>
+        <p style="margin: 0; font-family: 'Popins', sans-serif; font-size: 14px; color: #000000;">Copyright <span
+                id="currentYear"></span> @TourRide</p>
     </footer>
-    
+
     <script>
         // Mengambil tahun saat ini
         var currentYear = new Date().getFullYear();
         // Menampilkan tahun saat ini pada footer
         document.getElementById("currentYear").textContent = currentYear;
     </script>
-    
+
 
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -510,6 +628,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/4ec5967234.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
 </body>
 
 </html>
